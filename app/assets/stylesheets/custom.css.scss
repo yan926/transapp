@@ -1,0 +1,83 @@
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* miscellaneous */
+
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.jumbotron{
+  background-color: #fff;
+}
+
+.fix300{
+  width: 300px;
+  margin:0 auto;
+}
+
+.space{
+  width: 100%;
+  padding: 5px 0;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+#error_explanation {
+  color: #f00;
+  margin-bottom: 10px;
+}
+
+.field_with_errors {
+  @extend .has-error;
+}
+
+footer{
+  border-top: 1px solid #eaeaea;
+  padding: 20px;
+  clear: both;
+  margin-top:20px;
+
+  .moreinfo{
+    color: #bbb;
+    text-align: center;
+  }
+  a{
+    color: #999;
+    &:hover{
+      color:#333;
+    }
+  }
+  ul{
+    float: left;
+    list-style: none;
+  }
+  li{
+    float: left;
+    margin-left:10px; 
+  }
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+h1{font-size:30px}
+h2{font-size:25px}
+h3{font-size:20px}
+
