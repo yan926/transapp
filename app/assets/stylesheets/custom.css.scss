@@ -1,12 +1,5 @@
 @import "bootstrap";
 
-@mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* miscellaneous */
-
 body {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -74,7 +67,7 @@ footer{
   float: left;
   width: 100%;
   margin-top: 45px;
-  @include box_sizing;
+  box-sizing: border-box;
 }
 
 h1{font-size:30px}
