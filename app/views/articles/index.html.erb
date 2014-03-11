@@ -1,0 +1,15 @@
+<% if signed_in? && current_user.admin? %>
+  <div class="text-center"><%= link_to "New Article", new_article_path %></div>
+<% end %>
+<div class="space"></div>
+
+<% @articles.each do |article| %>
+  <h3><%= article.title.html_safe %></h3>
+  <p><%= article.content.html_safe %></p>
+  <% if signed_in? && current_user.admin? %> 
+    <%= link_to "Edit Article", edit_article_path(article) %>
+  <% end %>
+  <% if article != @articles.last %>
+  <hr />
+  <% end %>
+<% end %>
