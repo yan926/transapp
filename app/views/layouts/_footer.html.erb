@@ -1,8 +1,14 @@
 <footer class="footer">
   <small>
   <div class="moreinfo">
-    Powered by <a href="http://yanspot.com/">Yan</a>
-     | <a href="#">Sign In</a>
+    Powered by <a href="http://yanspot.com/">Yan</a> | 
+      
+    <% if signed_in? %>
+    <%= link_to current_user.name , current_user %> |
+    <%= link_to "Sign out", signout_path, method: "delete" %>
+    <% else %>
+    <%= link_to "Sign In", signin_path %>
+    <% end %>
   </div>
   
   </small>
