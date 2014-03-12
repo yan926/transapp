@@ -11,6 +11,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '3.1.1'
 gem "ckeditor"
+gem "paperclip", "~> 4.1"
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 group :development, :test do
   gem 'rspec-rails'

@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
   before_action :admin_user,  only: [:new, :edit, :update, :destroy]
 
   def index
-    @articles = Article.order("created_at DESC")
+    # @articles = Article.order("created_at DESC")
+    @articles = Article.paginate(page: params[:page] , :per_page => 5).order('created_at DESC')
   end
  
   def show
@@ -52,4 +53,5 @@ private
   def admin_user
     redirect_to(root_path) unless current_user.admin? 
   end
+
 end

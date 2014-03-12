@@ -1,10 +1,13 @@
 <% if signed_in? && current_user.admin? %>
-  <div class="text-center"><%= link_to "New Article", new_article_path %></div>
+  <div class="text-center">
+    <%= link_to "New Article", new_article_path , class: "btn btn-large btn-primary" %>
+  </div>
 <% end %>
 <div class="space"></div>
 
 <% @articles.each do |article| %>
   <h3><%= article.title.html_safe %></h3>
+  <p><%= article.updated_at.strftime("%Y-%m-%d")  %></p>
   <p><%= article.content.html_safe %></p>
   <% if signed_in? && current_user.admin? %> 
     <%= link_to "Edit Article", edit_article_path(article) %>
@@ -13,3 +16,6 @@
   <hr />
   <% end %>
 <% end %>
+<div class="text-center">
+<%= will_paginate %>
+</div>
