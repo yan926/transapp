@@ -5,8 +5,14 @@
 <div class="space"></div>
 
 <div class="fix300 text-center">
+
+
+
 <%= render 'shared/error_messages' %>
 <%= form_for @user do |f| %>
+
+
+
 <div class="form-group">
 <%= f.label :name , class: "control-label hidden" %>
 <%= f.text_field :name , class: "form-control", placeholder: :name %>
@@ -22,6 +28,19 @@
 <div class="form-group">
 <%= f.label :password_confirmation, "Confirmation" , class: "control-label hidden" %>
 <%= f.password_field :password_confirmation , class: "form-control",  placeholder: "Confirmation" %>
+</div>
+
+<div class="form-group">
+<div class="fileUpload btn btn-default">
+ <span id="uploadText">Upload Avatar</span>
+<%= f.file_field :avatar, class: "upload" , id:"uploadBtn" %>
+</div>
+<script type="text/javascript" id="avatar-style-js">
+document.getElementById("uploadBtn").onchange = function () {
+    document.getElementById("uploadFile").value = this.value;
+    document.getElementById("uploadText").innerHTML = this.value;   
+};
+</script>
 </div>
 
 <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>

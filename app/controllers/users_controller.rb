@@ -39,19 +39,16 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    getuser = User.find(params[:id])
-    unless getuser.admin? 
-      User.find(params[:id]).destroy
-      flash[:success] = "User destroyed."
-      redirect_to users_url
-    else
-      redirect_to users_url, notice: "Admin user cannot delete."
-    end
+
+    User.find(params[:id]).destroy
+    flash[:success] = "User destroyed."
+    redirect_to users_url
+    
   end
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
     end
 
     def signed_in_user

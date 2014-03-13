@@ -1,5 +1,14 @@
 <div class="text-center">
+<% image_tag @user.avatar.url %>
+<% image_tag @user.avatar.url(:medium) %>
+<%= image_tag( @user.avatar.url(:thumb), class: "avatar-img" ) if @user.avatar.exists? %>
+<div class="space"></div>
+<div class="space"></div>
 <%= @user.name %>, <%= @user.email %>
 
 <%= link_to "Edit", edit_user_path(current_user) %>
+
+
+
+
 </div>
