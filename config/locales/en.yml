@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  global:
+    transcenter: "Translation Center"
+    news: "News"
+    aboutus: "About us"
+    service: "Service"
+    events: "Events"
+    publications: "Publications"
+
