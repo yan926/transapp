@@ -1,55 +1,68 @@
-@import "bootstrap";
-
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+body{
+  margin: 0;
+  background: #f3f3f3;
 }
 
-.navbar {
-  margin-bottom: 20px;
+.global-container{
+  width: 860px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px;
+  background: #fff;
 }
 
-.jumbotron{
-  background-color: #fff;
+.global-banner{
+  width: 860px;
+  height: 110px;
+  background-image: image-url("topbanner.jpg");
+  background-repeat: no-repeat;
+}
+.navbar{
+  background-image: image-url("navbg.jpg");
+  background-repeat: no-repeat;
+  height: 21px;
 }
 
-.fix300{
-  width: 300px;
-  margin:0 auto;
+ul.navlist {
+  float:right;
+  margin: 0;
+  list-style:none;
+  font-size: 13px;
 }
 
-.space{
-  width: 100%;
-  padding: 5px 0;
+ul.navlist li{
+  display:inline;
+  margin:0px 20px 0px 0px;
+  height: 21px;
+}
+.navbar a:link,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active{
+  color: #fff;
+  text-decoration:none;
 }
 
-.form-group {
-  margin-bottom: 10px;
-}
-
-#error_explanation {
-  color: #f00;
-  margin-bottom: 10px;
-}
-
-.field_with_errors {
-  @extend .has-error;
-}
 
 footer{
-  border-top: 1px solid #eaeaea;
-  padding: 20px;
+  background-image: image-url("footerbg.jpg");
+  background-repeat: no-repeat;
+  height: 30px;
   clear: both;
   margin-top:20px;
-
+  
   .moreinfo{
+    padding-top: 7px;
+    padding-right: 10px; 
     color: #bbb;
-    text-align: center;
+    text-align: right;
   }
   a{
     color: #999;
+    text-decoration:none;
     &:hover{
-      color:#333;
+      color:#fff;
+      text-decoration:none;
     }
   }
   ul{
@@ -68,7 +81,81 @@ footer{
   width: 100%;
   margin-top: 45px;
   box-sizing: border-box;
+  background: #f3f3f3;
 }
+
+.text-center{
+  text-align: center;
+}
+.space{
+  width: 100%;
+  padding: 5px 0;
+}
+
+.form-group{
+  margin: 8px;
+}
+.hidden{
+  display: none;
+}
+
+.form-control{
+  height: 20px;
+width: 25%; 
+border: 1px solid #acacac;
+border-radius: 4px;
+ padding:4px 8px;
+}
+
+.btn{
+  background-color:#fcfcfc;
+  border-radius:4px;
+  border:1px solid #acacac;
+  display:inline-block;
+  cursor:pointer;
+  font-size:13px;
+  padding:8px 16px;
+  color: #333;
+  text-decoration:none;
+}
+h2{
+  margin: 20px 15px 10px 15px;
+  color: #800000;
+}
+
+.avatar-img{
+  padding: 10px;
+  border-radius: 20%;
+  display: block;
+  margin: 0 auto;
+}
+/*.jumbotron{
+  background-color: #fff;
+}
+
+.fix300{
+  width: 300px;
+  margin:0 auto;
+}
+
+
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+#error_explanation {
+  color: #f00;
+  margin-bottom: 10px;
+}
+
+.field_with_errors {
+  @extend .has-error;
+}
+
+
+
+
 
 
 .fileUpload {
@@ -94,7 +181,7 @@ footer{
   display: block;
   margin: 0 auto;
 }
-
+*/
 
 
 
