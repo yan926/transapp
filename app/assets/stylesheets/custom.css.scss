@@ -129,6 +129,59 @@ h2{
   display: block;
   margin: 0 auto;
 }
+
+.rightcolumn{
+  font-size: 12px;
+  float: right;
+  width: 190px;
+  margin: 15px 5px;
+
+  .block{
+    margin-bottom: 15px;
+  }
+
+  .title{
+    background-color: #04090F;
+    height: 23px;
+    font-size: 14px;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 23px;
+    width: 100%;
+      .redpt{
+        display: block;
+        float: left;
+        width: 11px;
+        height: 11px;
+        background-color: #990100;
+        margin: 6px 8px 7px 10px;
+      }
+   }
+   .contents{
+    margin:10px;
+   }
+   .contents ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 5px 0 5px 0;
+      li{
+        margin: 2px 0px;
+      }
+   }
+   
+   a{
+    color:#950000;
+    text-decoration:none;
+   }
+   
+}
+
+
+.main-container{
+   margin: 15px 5px;
+   float: left;
+   width: 640px;
+}
 /*.jumbotron{
   background-color: #fff;
 }
