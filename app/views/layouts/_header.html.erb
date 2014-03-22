@@ -2,14 +2,14 @@
 <div class="global-banner"></div>
 <div class="navbar">
 <ul class="navlist">
-  <li><a href="#"><%= t("global.news") %></a></li>
+  <li><a href="/"><%= t("global.news") %></a></li>
   <li><a href="#"><%= t("global.aboutus") %></a></li>
   <li><a href="#"><%= t("global.service") %></a></li>
   <li><a href="#"><%= t("global.events") %></a></li>
   <li><a href="#"><%= t("global.publications") %></a></li>
   <li>
     <%= link_to( "中文版", :controller => controller.controller_name, 
-       :action => controller.action_name, :locale => "zh-TW" ) if I18n.locale == :en  %>
+       :action => controller.action_name, :locale => "zh" ) if I18n.locale == :en  %>
     <%= link_to( "English", :controller => controller.controller_name, 
        :action => controller.action_name, :locale => "en") if I18n.locale != :en %>  
   </li>

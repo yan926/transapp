@@ -9,6 +9,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
 
   /* Filebrowser routes */
+
     // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
     config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
 
@@ -31,14 +32,14 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserUploadUrl = "/ckeditor/attachment_files";
     //config.PreserveSessionOnFileBrowser = true;
     // Define changes to default configuration here. For example:
-    //config.language = 'zh-cn';
+    config.language = 'zh';
     config.uiColor = '#efefef';
 
     //config.ContextMenu = ['Generic','Anchor','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField','ImageButton','Button','BulletedList','NumberedList','Table','Form'] ;
 
     //config.height = '400px';
     //config.width = '600px';
-    config.height = '450px';
+    config.height = '150px';
 
     //config.resize_enabled = false;
     //config.resize_maxHeight = 2000;

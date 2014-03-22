@@ -15,6 +15,9 @@ gem "paperclip", "~> 4.1"
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.10'
 
+
+gem 'rails_kindeditor'
+
 group :development, :test do
   gem 'rspec-rails'
 end

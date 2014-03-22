@@ -117,10 +117,30 @@ border-radius: 4px;
   padding:8px 16px;
   color: #333;
   text-decoration:none;
+
+  color: #fff;
+  background-color: #a63f42; /*#d9534f;*/
+  border-color: #9f2d30;
 }
+
+.btn:link,.btn:visited,.btn:hover ,.btn:active{
+  color:#fff;
+  text-decoration:none;
+}
+
 h2{
   margin: 20px 15px 10px 15px;
   color: #800000;
+}
+h3{
+  margin: 20px 0 2px 0;
+  color: #800000;
+}
+
+.time-tag{
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
 }
 
 .avatar-img{
@@ -176,12 +196,40 @@ h2{
    
 }
 
+a:link, a:visited, a:hover , a:active{
+  color:#950000;
+  text-decoration:none;
+}
+
+hr{
+  border:0; height:1px; background-color:#d4d4d4;
+  color:#d4d4d4
+}
+
+
 
 .main-container{
-   margin: 15px 5px;
-   float: left;
-   width: 640px;
+  margin: 15px 13px;
+  float: left;
+  width: 610px;
+
+   img{
+    max-width: 600px;
+   }
 }
+
+
+.alert{
+  background: #fcf8e3;
+  padding: 10px;
+  color: #333;
+
+}
+
+
+
+
+
 /*.jumbotron{
   background-color: #fff;
 }

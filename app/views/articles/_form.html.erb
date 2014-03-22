@@ -16,9 +16,28 @@
     
 
     <%= javascript_include_tag "ckeditor/init" %>
-    <%= f.text_area :content, :class => "ckeditor"  %>
+    <% f.text_area :content, :class => "ckeditor"  %>
+
+
+
+    <%= f.kindeditor :content %>
   </div>
   <div>
     <%= f.submit "Post" , class: "btn btn-large btn-primary" %>
   </div>
 <% end %>
+
+
+<script type="text/javascript">
+$(function() { 
+  var k = KindEditor.create('#article_content', {
+    "width": "100%",
+    "height": 600,
+    "allowFileManager": true,
+    "uploadJson": "/kindeditor/upload",
+    "fileManagerJson": "/kindeditor/filemanager",
+    "langType" :"en"
+  });
+  // k.langType = "en";
+}); 
+</script>
