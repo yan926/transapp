@@ -23,8 +23,21 @@ en:
   global:
     transcenter: "Translation Center"
     news: "News"
-    aboutus: "About us"
+    aboutus: "About Us"
     service: "Service"
     events: "Events"
     publications: "Publications"
 
+  will_paginate:
+    previous_label: "Prev"
+    next_label: "Next"
+
+  rightcolumn:
+    cfll: "College of Foreign Languages, NCCU"
+    flec: "Foreign Language Center For Universities in North Taiwan"
+    flc: "Foreign Language Center, NCCU"
+    nccu: "National Chengchi University"
+    address: "Address: No. 64, Sec. 2, ZhiNan Rd., Wenshan District, Taipei City 11605, Taiwan R.O.C."
+    phone: "Tel: (02)2939-3091 ext.62739"
+    fax: "Fax: (02)29390459"
+    mail: "E-Mail:"

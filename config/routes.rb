@@ -1,7 +1,9 @@
 Transapp::Application.routes.draw do
   
-  resources :articles
+  resources :aboutpages
 
+  resources :articles
+  resources :aboutpages
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   # root to: 'static_pages#home'
@@ -10,7 +12,7 @@ Transapp::Application.routes.draw do
   match '/signin',  to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
-  mount Ckeditor::Engine => '/ckeditor'
+
 
   
 

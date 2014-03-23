@@ -2,8 +2,8 @@
 <div class="global-banner"></div>
 <div class="navbar">
 <ul class="navlist">
-  <li><a href="/"><%= t("global.news") %></a></li>
-  <li><a href="#"><%= t("global.aboutus") %></a></li>
+  <li><%= link_to t("global.news"), root_path %></li>
+  <li><%= link_to t("global.aboutus"), aboutpages_path %></li>
   <li><a href="#"><%= t("global.service") %></a></li>
   <li><a href="#"><%= t("global.events") %></a></li>
   <li><a href="#"><%= t("global.publications") %></a></li>

@@ -2,11 +2,21 @@ zh:
   global:
     transcenter: "翻譯中心"
     news: "最新消息"
-    aboutus: "關於我們"
+    aboutus: "中心簡介"
     service: "業務範圍"
     events: "活動集錦"
     publications: "學術刊物"
 
-  ckeditor:
-    buttons:
-      upload: "上傳"
+  will_paginate:
+    previous_label: "上一頁"
+    next_label: "下一頁"
+
+  rightcolumn:
+    cfll: "政大外語學院"
+    flec: "北區大學外文中心"
+    flc: "政大外文中心"
+    nccu: "國立政治大學首頁"
+    address: "地址：台北市文山區指南路二段64號（道藩樓三樓）"
+    phone: "電話：(02)2939-3091轉62739"
+    fax: "傳真：(02)29390459"
+    mail: "信箱："

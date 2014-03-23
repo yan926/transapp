@@ -1,5 +1,6 @@
+<h1 class="mainpage-title"><%= t("global.news") %></h1>
 <% if signed_in? && current_user.admin? %>
-  <div>
+  <div class="full-size-form">
     <%= link_to "New Article", new_article_path , class: "btn btn-large btn-primary" %>
   </div>
 <% end %>
@@ -10,6 +11,7 @@
   <p><%= article.content.html_safe %></p>
   <% if signed_in? && current_user.admin? %> 
     <%= link_to "Edit", edit_article_path(article) , class: "btn" %>
+    <%= link_to "Delete", article, method: :delete, data: { confirm: "You sure?" } ,class: "btn-clear" %>
   <% end %>
   <% if article != @articles.last %>
   <hr />

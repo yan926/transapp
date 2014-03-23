@@ -253,21 +253,13 @@ K.options = {
 	indentChar : '\t',
 	cssPath : '',
 	cssData : '',
-	minWidth : 650,
+	minWidth : 600,
+	height : "100%",
 	minHeight : 100,
+	height: 600;
 	minChangeSize : 50,
 	zIndex : 811213,
-	// items : [
-	// 	'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
-	// 	'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
-	// 	'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-	// 	'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
-	// 	'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
-	// 	'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
-	// 	'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
-	// 	'anchor', 'link', 'unlink', '|', 'about'
-	// ],
-	items : [ "source","|","undo","redo","|","cut","copy","paste","plainpaste","wordpaste","|","justifyleft","justifycenter","justifyright","justifyfull","|","insertorderedlist","insertunorderedlist","|","indent","outdent","subscript","superscript","|","clearhtml","removeformat","|","link","unlink","|","formatblock","fontname","fontsize","forecolor","hilitecolor","bold","italic","underline","strikethrough","|","image","multiimage","media","insertfile","table" ],
+	items : ["source","|","undo","redo","|","cut","copy","paste","plainpaste","wordpaste","|","justifyleft","justifycenter","justifyright","justifyfull","|","insertorderedlist","insertunorderedlist","|","indent","outdent","subscript","superscript","|","clearhtml","removeformat","|","link","unlink","|","formatblock","fontname","fontsize","forecolor","hilitecolor","bold","italic","underline","strikethrough","|","image","multiimage","media","insertfile","table"],
 	noDisableItems : ['source', 'fullscreen'],
 	colorTable : [
 		['#E53333', '#E56600', '#FF9900', '#64451D', '#DFC5A4', '#FFE500'],

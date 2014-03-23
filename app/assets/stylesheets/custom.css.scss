@@ -1,6 +1,7 @@
 body{
   margin: 0;
   background: #f3f3f3;
+  font-size: 10.5pt;
 }
 
 .global-container{
@@ -9,6 +10,7 @@ body{
   margin-left: auto;
   padding: 0px;
   background: #fff;
+  box-shadow: 0px 0px 8px #999;
 }
 
 .global-banner{
@@ -43,6 +45,9 @@ ul.navlist li{
   text-decoration:none;
 }
 
+header {
+  background:  #04090F;
+}
 
 footer{
   background-image: image-url("footerbg.jpg");
@@ -57,13 +62,18 @@ footer{
     color: #bbb;
     text-align: right;
   }
-  a{
+  a:link, a:visited {
     color: #999;
     text-decoration:none;
     &:hover{
       color:#fff;
       text-decoration:none;
     }
+    &:active{
+      color:#fff;
+      text-decoration:none;
+    }
+
   }
   ul{
     float: left;
@@ -101,10 +111,19 @@ footer{
 
 .form-control{
   height: 20px;
-width: 25%; 
-border: 1px solid #acacac;
-border-radius: 4px;
- padding:4px 8px;
+  width: 25%; 
+  border: 1px solid #acacac;
+  border-radius: 2px;
+  padding:4px 8px;
+}
+.full-size{
+  width: 97.5%;
+  font-size: 10.5pt;
+  font-family: serif;
+}
+
+.full-size-form{
+  margin: 8px 0;
 }
 
 .btn{
@@ -140,7 +159,7 @@ h3{
 .time-tag{
   margin: 4px 0;
   color: #666;
-  font-size: 14px;
+  font-size: 10.5pt;
 }
 
 .avatar-img{
@@ -154,7 +173,7 @@ h3{
   font-size: 12px;
   float: right;
   width: 190px;
-  margin: 15px 5px;
+  margin: 15px 10px;
 
   .block{
     margin-bottom: 15px;
@@ -201,21 +220,30 @@ a:link, a:visited, a:hover , a:active{
   text-decoration:none;
 }
 
-hr{
-  border:0; height:1px; background-color:#d4d4d4;
-  color:#d4d4d4
-}
+
 
 
 
 .main-container{
-  margin: 15px 13px;
+  margin: 8px 13px;
   float: left;
   width: 610px;
-
-   img{
+  h1.mainpage-title{
+    margin: 0 0 2px 0;
+    color: #800000;
+    font-size: 14.5pt;
+    border-bottom: 1px solid #800000;
+    padding-bottom: 4px;
+  }
+  
+  img{
     max-width: 600px;
-   }
+  }
+
+  & > hr{
+    border:0; height:1px; background-color:#d4d4d4;
+    color:#d4d4d4;margin: 25px 0;
+  }
 }
 
 
@@ -223,8 +251,38 @@ hr{
   background: #fcf8e3;
   padding: 10px;
   color: #333;
-
 }
+div.pagination{
+  ul.pagination {
+    li{
+      display: inline;
+      padding:8px;
+    }
+    li.disabled{
+      display: none;
+    }
+    li.active{
+      border-radius:4px;
+      display:inline-block;
+      cursor:pointer;
+      font-size:13px;
+      padding:8px;
+      text-decoration:none;
+      color: #fff;
+      background-color: #a63f42; /*#d9534f;*/
+      border-color: #9f2d30;
+      a{
+       color: #fff;
+       cursor: default;
+      }
+    }
+  }
+}
+
+.btn-clear{
+  margin: 8px;
+}
+
 
 
 

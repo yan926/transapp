@@ -36,6 +36,12 @@ class ArticlesController < ApplicationController
       render action: "edit"
     end
   end
+
+  def destroy
+    Article.find(params[:id]).destroy
+    flash[:success] = "Article destroyed."
+    redirect_to articles_url
+  end
  
 private
  

@@ -1,24 +1,24 @@
-<% if @article.errors.any? %>
+<% if @aboutpage.errors.any? %>
   <ul>
-    <%= @article.errors.full_messages.each do |message| %>
+    <%= @aboutpage.errors.full_messages.each do |message| %>
         <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
-<%= form_for @article do |f| %>
+<%= form_for @aboutpage do |f| %>
   <div class="form-group full-size-form">
-    <%= f.label :title, class: "control-label hidden"  %>
-    <%= f.text_field :title ,  class: "form-control full-size" , placeholder: :title %>
+    <%= f.label :language, class: "control-label hidden"  %>
+    <%= f.text_field :language ,  class: "form-control full-size hidden" , :value => I18n.locale.to_s %>
   </div>
   <div class="form-group full-size-form">
-    <%= f.label :content , class: "control-label hidden"  %>
+    <%= f.label :body , class: "control-label hidden"  %>
 
-    <%= f.kindeditor :content %>
+    <%= f.kindeditor :body %>
   </div>
   <div>
     <% if action_name == "edit" %> 
       <%= f.submit "Save" , class: "btn btn-large btn-primary" %>
-      <%= link_to "Cancel", articles_path  %>
+      <%= link_to "Cancel", aboutpages_path  %>
     <% end %>
     <%= f.submit "Post" , class: "btn btn-large btn-primary" if action_name == "new" %>
   </div>
@@ -27,7 +27,7 @@
 
 <script type="text/javascript">
 $(function() { 
-  KindEditor.create('#article_content', {
+  KindEditor.create('#aboutpage_body', {
     "width": "100%",
     "height": 600,
     "allowFileManager": true,
