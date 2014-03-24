@@ -1,0 +1,17 @@
+<h1 class="mainpage-title"><%= t("global.service") %></h1>
+<% if signed_in? && current_user.admin? %>
+  <div class="full-size-form">
+    <%= link_to "New", new_scopepage_path , class: "btn btn-large btn-primary" if @scopepages.count < 1 %>
+  </div>
+<% end %>
+
+<% @scopepages.each do |scopepage| %>
+  <% if I18n.locale.to_s == scopepage.language  %>
+    <p><%= scopepage.body.html_safe %></p>
+    <% if signed_in? && current_user.admin? %> 
+      <%= link_to "Edit", edit_scopepage_path(scopepage) , class: "btn" %>
+      <%= link_to "Delete", scopepage, method: :delete, data: { confirm: "You sure?" } ,class: "btn-clear" %>
+    <% end %>
+  <% end %>
+<% end %>
+

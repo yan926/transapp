@@ -1,9 +1,8 @@
 Transapp::Application.routes.draw do
   
+  resources :scopepages
   resources :aboutpages
-
   resources :articles
-  resources :aboutpages
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   # root to: 'static_pages#home'
