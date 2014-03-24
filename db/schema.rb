@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324051434) do
+ActiveRecord::Schema.define(version: 20140324061838) do
 
   create_table "aboutpages", force: true do |t|
     t.string   "title"
@@ -43,6 +43,20 @@ ActiveRecord::Schema.define(version: 20140324051434) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "eventpages", force: true do |t|
+    t.text     "body"
+    t.string   "language"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "publicationpages", force: true do |t|
+    t.text     "body"
+    t.string   "language"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "scopepages", force: true do |t|
     t.text     "body"

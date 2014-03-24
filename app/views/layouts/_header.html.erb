@@ -5,8 +5,8 @@
   <li><%= link_to t("global.news"), root_path %></li>
   <li><%= link_to t("global.aboutus"), aboutpages_path %></li>
   <li><%= link_to t("global.service"), scopepages_path %></li>
-  <li><a href="#"><%= t("global.events") %></a></li>
-  <li><a href="#"><%= t("global.publications") %></a></li>
+  <li><%= link_to t("global.events"), eventpages_path %></li>
+  <li><%= link_to t("global.publications"), publicationpages_path %></li>
   <li>
     <%= link_to( "中文版", :controller => controller.controller_name, 
        :action => controller.action_name, :locale => "zh" ) if I18n.locale == :en  %>

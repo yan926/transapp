@@ -1,0 +1,2 @@
+module EventpagesHelper
+end

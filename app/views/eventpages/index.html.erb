@@ -1,0 +1,17 @@
+<h1 class="mainpage-title"><%= t("global.events") %></h1>
+<% if signed_in? && current_user.admin? %>
+  <div class="full-size-form">
+    <%= link_to "New", new_eventpage_path , class: "btn btn-large btn-primary" if @eventpages.count < 1 %>
+  </div>
+<% end %>
+
+<% @eventpages.each do |eventpage| %>
+  <% if I18n.locale.to_s == eventpage.language  %>
+    <p><%= eventpage.body.html_safe %></p>
+    <% if signed_in? && current_user.admin? %> 
+      <%= link_to "Edit", edit_eventpage_path(eventpage) , class: "btn" %>
+      <%= link_to "Delete", eventpage, method: :delete, data: { confirm: "You sure?" } ,class: "btn-clear" %>
+    <% end %>
+  <% end %>
+<% end %>
+

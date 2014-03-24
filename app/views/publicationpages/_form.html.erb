@@ -1,0 +1,40 @@
+<% if @publicationpage.errors.any? %>
+  <ul>
+    <%= @publicationpage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for @publicationpage do |f| %>
+  <div class="form-group full-size-form">
+    <%= f.label :language, class: "control-label hidden"  %>
+    <%= f.text_field :language ,  class: "form-control full-size hidden" , :value => I18n.locale.to_s %>
+  </div>
+  <div class="form-group full-size-form">
+    <%= f.label :body , class: "control-label hidden"  %>
+
+    <%= f.kindeditor :body %>
+  </div>
+  <div>
+    <% if action_name == "edit" %> 
+      <%= f.submit "Save" , class: "btn btn-large btn-primary" %>
+      <%= link_to "Cancel", publicationpages_path  %>
+    <% end %>
+    <%= f.submit "Post" , class: "btn btn-large btn-primary" if action_name == "new" %>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+$(function() { 
+  KindEditor.create('#publicationpage_body', {
+    "width": "100%",
+    "height": 600,
+    "allowFileManager": true,
+    "uploadJson": "/kindeditor/upload",
+    "fileManagerJson": "/kindeditor/filemanager",
+    "langType" : "en",
+    "items" : ["source","|","undo","redo","|","cut","copy","paste","plainpaste","wordpaste","|","justifyleft","justifycenter","justifyright","justifyfull","|","insertorderedlist","insertunorderedlist","|","indent","outdent","subscript","superscript","|","clearhtml","removeformat","|","link","unlink","|","formatblock","fontname","fontsize","forecolor","hilitecolor","bold","italic","underline","strikethrough","|","image","multiimage","media","insertfile","table"]
+  });
+}); 
+</script>

@@ -1,5 +1,9 @@
 Transapp::Application.routes.draw do
   
+  resources :publicationpages
+
+  resources :eventpages
+
   resources :scopepages
   resources :aboutpages
   resources :articles
