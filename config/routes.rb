@@ -1,5 +1,7 @@
 Transapp::Application.routes.draw do
   
+  resources :ccspublications
+
   resources :publicationpages
 
   resources :eventpages

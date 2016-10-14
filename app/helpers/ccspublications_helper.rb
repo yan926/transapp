@@ -1,0 +1,2 @@
+module CcspublicationsHelper
+end

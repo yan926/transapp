@@ -6,6 +6,8 @@ zh:
     service: "業務範圍"
     events: "活動集錦"
     publications: "學術刊物"
+    guangyi: "廣譯"
+    ccs: "文化越界"
 
   will_paginate:
     previous_label: "上一頁"

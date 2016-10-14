@@ -27,6 +27,8 @@ en:
     service: "Service"
     events: "Events"
     publications: "Publications"
+    guangyi: "Guang Yi"
+    ccs: "Cross-Cultural Studies"
 
   will_paginate:
     previous_label: "Prev"

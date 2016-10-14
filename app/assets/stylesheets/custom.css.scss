@@ -350,5 +350,47 @@ div.pagination{
 */
 
 
+.navtabs{
+  width: 100%;
+  padding: 0;
+  border-bottom: 1px solid #800000;
+  margin: 12px 0 20px;
+  font-size: 17px;
+}
+.navtabs .navtabs-title{
+  padding: 10px 17px 10px 5px;
+}
+
+.navtabs-title h1{
+  font-size: 14.5pt;
+  margin: 0;
+  padding: 0;
+  color: #800000;
+  display: table-cell;
+}
+.navtabs-title h1:after{
+  content: '{';
+  padding-left: 7px;
+}
+
+.navtabs li{
+  display: table-cell;
+  padding: 10px 20px;
+}
+.navtabs li.active{
+  background: #800000;
+  color: #fff;
+}
+
+// .navtabs li:last-child{
+//   padding-left:0;
+// }
+.navtabs li:last-child:after{
+  content: "}";
+  font-size: 14.5pt;
+  color: #800000;
+  font-weight: bold;
+}
+
 
 
