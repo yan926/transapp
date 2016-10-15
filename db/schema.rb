@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014171342) do
+ActiveRecord::Schema.define(version: 20161015180905) do
 
   create_table "aboutpages", force: true do |t|
     t.string   "title"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20161014171342) do
     t.string   "language"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cat"
+    t.string   "title"
   end
 
   create_table "ckeditor_assets", force: true do |t|

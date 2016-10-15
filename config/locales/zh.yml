@@ -1,5 +1,6 @@
 zh:
   global:
+    transcfcs: "國立政治大學翻譯與跨文化研究中心"
     transcenter: "翻譯中心"
     news: "最新消息"
     aboutus: "中心簡介"
@@ -9,6 +10,12 @@ zh:
     guangyi: "廣譯"
     ccs: "文化越界"
 
+  ccs: 
+    about: "簡介"
+    guideline: "投稿須知"
+    editor: "編輯委員"
+    archive: "各期刊物" 
+  
   will_paginate:
     previous_label: "上一頁"
     next_label: "下一頁"

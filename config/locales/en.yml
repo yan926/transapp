@@ -21,6 +21,7 @@
 
 en:
   global:
+    transcfcs: "Center For Translation & Cross-Cultural Studies"
     transcenter: "Translation Center"
     news: "News"
     aboutus: "About Us"
@@ -29,6 +30,11 @@ en:
     publications: "Publications"
     guangyi: "Guang Yi"
     ccs: "Cross-Cultural Studies"
+  ccs: 
+    about: "About"
+    guideline: "Submission Guidelines"
+    editor: "Editorial Board"
+    archive: "Archive" 
 
   will_paginate:
     previous_label: "Prev"

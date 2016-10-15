@@ -6,13 +6,19 @@ class CcspublicationsController < ApplicationController
   # GET /ccspublications.json
   def index
     # @ccspublications = Ccspublication.all
-    @ccspublications = Ccspublication.where(:language => I18n.locale.to_s)
+    @ccspublications = Ccspublication.where("language = ? AND cat = ''", I18n.locale.to_s).all
+    if params[:no]
+      @ccspublication = Ccspublication.where("language = ? AND cat = '' AND id = ?", I18n.locale.to_s,params[:no] ).take
+    else
+      @ccspublication = Ccspublication.where("language = ? AND cat = ''", I18n.locale.to_s).order('created_at').last
+    end
   end
 
   # GET /ccspublications/1
   # GET /ccspublications/1.json
   def show
-    @ccspublication = Ccspublication.find(params[:id])
+    # @ccspublication = Ccspublication.find(params[:id])
+    @ccspublication = Ccspublication.where("language = ? AND cat = ?", I18n.locale.to_s, params[:id]).take
   end
 
   # GET /ccspublications/new
@@ -41,7 +47,14 @@ class CcspublicationsController < ApplicationController
   def update
     @ccspublication = Ccspublication.find(params[:id])
     if @ccspublication.update_attributes(ccspublication_params)
-      redirect_to ccspublications_path, notice: "The Cross-Cultural Studies Publication has been successfully updated."
+      @msg = "The Cross-Cultural Studies Publication has been successfully updated."
+
+      if @ccspublication.cat
+        redirect_to :action => 'show', :id => @ccspublication.cat
+      else
+        redirect_to ccspublications_path, notice: @msg
+      end
+
     else
       render action: "edit"
     end
@@ -58,7 +71,7 @@ class CcspublicationsController < ApplicationController
 private
 
   def ccspublication_params
-    params.require(:ccspublication).permit(:language, :body)
+    params.require(:ccspublication).permit(:language, :body, :cat, :title)
   end
 
   def signed_in_user

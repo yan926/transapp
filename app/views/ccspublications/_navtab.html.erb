@@ -1,0 +1,23 @@
+<ul class="navtabs">
+  <li class="navtabs-title">
+    <h1><%= t("global.publications") %></h1>
+  </li>
+  <li ><%= link_to t("global.guangyi"), publicationpages_path %></li>
+  <li class="active"><%= t("global.ccs") %></li>
+  <li></li>
+</ul>
+<ul class="navsubtabs">
+  <li  <% if params[:id] == 'about' %>class="active"<% end %>>
+    <%= link_to t("ccs.about"), { :action => 'show', :id=> 'about' } %>
+  </li>
+  <li <% if params[:id] == 'guideline' %>class="active"<% end %>>
+    <%= link_to t("ccs.guideline"), { :action => 'show', :id=> 'guideline' } %>
+  </li>
+  <li <% if params[:id] == 'editor' %>class="active"<% end %>>
+    <%= link_to t("ccs.editor"), { :action => 'show', :id=> 'editor' } %>
+  </li>
+  <li <% unless params[:id] %>class="active"<% end %>>
+    <%= link_to t("ccs.archive"), ccspublications_path %>
+  </li>
+</ul>
+

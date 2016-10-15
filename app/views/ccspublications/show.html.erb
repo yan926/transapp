@@ -1,0 +1,17 @@
+<%= render "navtab" %>
+
+<% if @ccspublication %>
+  <% if I18n.locale.to_s == @ccspublication.language  %>
+    <p><%= @ccspublication.body.html_safe %></p>
+    <% if signed_in? && current_user.admin? %> 
+      <%= link_to "Edit", edit_ccspublication_path(@ccspublication) , class: "btn" %>
+      <%= link_to "Delete", @ccspublication, method: :delete, data: { confirm: "You sure?" } ,class: "btn-clear" %>
+    <% end %>
+  <% end %>
+<% else %>
+  <% if signed_in? && current_user.admin? %>
+    <div class="full-size-form">
+      <%= link_to "New", new_ccspublication_path(cat: params[:id]) , class: "btn btn-large btn-primary" %>
+    </div>
+  <% end %>
+<% end %>

@@ -354,42 +354,71 @@ div.pagination{
   width: 100%;
   padding: 0;
   border-bottom: 1px solid #800000;
-  margin: 12px 0 20px;
+  margin: 12px 0 0;
   font-size: 17px;
-}
-.navtabs .navtabs-title{
-  padding: 10px 17px 10px 5px;
+
+  .navtabs-title{
+    padding: 10px 17px 10px 5px;
+  }
+  h1{
+    font-size: 14.5pt;
+    margin: 0;
+    padding: 0;
+    color: #800000;
+    display: table-cell;
+  }
+  h1:after{
+    content: '{';
+    padding-left: 7px;
+  }
+  li{
+    display: table-cell;
+    padding: 10px 20px;
+  }
+  li.active{
+    background: #800000;
+    color: #fff;
+  }
+  li:last-child:after{
+    content: "}";
+    font-size: 14.5pt;
+    color: #800000;
+    font-weight: bold;
+  }
+
 }
 
-.navtabs-title h1{
-  font-size: 14.5pt;
+.navsubtabs{
+  // border-bottom: 1px solid #e1d3d3;
   margin: 0;
+  margin-bottom: 30px;
   padding: 0;
-  color: #800000;
-  display: table-cell;
-}
-.navtabs-title h1:after{
-  content: '{';
-  padding-left: 7px;
-}
-
-.navtabs li{
-  display: table-cell;
-  padding: 10px 20px;
-}
-.navtabs li.active{
-  background: #800000;
-  color: #fff;
+  li{
+    padding: 10px 15px;
+    display: table-cell;
+  }
+  li.active{
+    background: #f1e9e9;
+  }
 }
 
-// .navtabs li:last-child{
-//   padding-left:0;
-// }
-.navtabs li:last-child:after{
-  content: "}";
-  font-size: 14.5pt;
-  color: #800000;
-  font-weight: bold;
+.ccstable{
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+}
+.ccstable li{
+  display: table-cell;
+  padding-right: 10px;
+}
+.ccstable a{
+  /*background: #f1e9e9;*/
+  border: 3px solid #fff;
+  padding: 10px 15px;
+  border: 1px solid;
+}
+.ccstable .active a{
+  background: #f1e9e9;
 }
 
 

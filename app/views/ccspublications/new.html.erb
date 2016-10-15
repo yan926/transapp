@@ -1,2 +1,2 @@
-<h3>New Cross-Cultural Studies Publication</h3>
+<h3>New Cross-Cultural Studies Publication <%= "(" + params[:cat] + ")" if params[:cat]   %></h3>
 <%= render "form" %>
