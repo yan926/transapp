@@ -5,11 +5,19 @@ class PublicationpagesController < ApplicationController
   def index
     # @publicationpages = Publicationpage.order("created_at DESC")
     # @publicationpages = Publicationpage.paginate(page: params[:page] , :per_page => 5).order('created_at DESC')
-    @publicationpages = Publicationpage.where(:language => I18n.locale.to_s)
+    # @publicationpages = Publicationpage.where(:language => I18n.locale.to_s)
+
+    @publicationpages = Publicationpage.where("language = ? AND cat = ''", I18n.locale.to_s).all
+    if params[:no]
+      @publicationpage = Publicationpage.where("language = ? AND cat = '' AND id = ?", I18n.locale.to_s,params[:no] ).take
+    else
+      @publicationpage = Publicationpage.where("language = ? AND cat = ''", I18n.locale.to_s).order('created_at').last
+    end
   end
  
   def show
-    @publicationpage = Publicationpage.find(params[:id])
+    # @publicationpage = Publicationpage.find(params[:id])
+    @publicationpage = Publicationpage.where("language = ? AND cat = ?", I18n.locale.to_s, params[:id]).take
   end
  
   def new
@@ -32,7 +40,12 @@ class PublicationpagesController < ApplicationController
   def update
     @publicationpage = Publicationpage.find(params[:id])
     if @publicationpage.update_attributes(publicationpage_params)
-      redirect_to publicationpages_path, notice: "The publicationpage has been successfully updated."
+      @msg = "The publicationpage has been successfully updated."
+      if @publicationpage.cat
+        redirect_to :action => 'show', :id => @publicationpage.cat
+      else
+        redirect_to publicationpages_path, notice: @msg  
+      end
     else
       render action: "edit"
     end
@@ -47,7 +60,7 @@ class PublicationpagesController < ApplicationController
 private
  
   def publicationpage_params
-    params.require(:publicationpage).permit(:language, :body)
+    params.require(:publicationpage).permit(:language, :body, :cat, :title)
   end
 
   def signed_in_user

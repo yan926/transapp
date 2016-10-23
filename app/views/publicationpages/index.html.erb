@@ -1,24 +1,27 @@
-<ul class="navtabs">
-  <li class="navtabs-title">
-    <h1><%= t("global.publications") %></h1>
-  </li>
-  <li class="active"><%= t("global.guangyi") %></li>  
-  <li><%= link_to t("global.ccs"), ccspublications_path, class: "" %></li>
-  <li></li>
+<%= render "navtab" %>
+
+<ul class="ccstable">
+<% @publicationpages.each do |publicationpage| %>
+  <% if I18n.locale.to_s == publicationpage.language  %>
+    <li <% if @publicationpage.id == publicationpage.id  %>class='active'<% end %>>
+      <%= link_to publicationpage.title,  { :no => publicationpage.id }  %>
+    </li>
+  <% end %>
+<% end %>
 </ul>
+
+<div class="ccscontent">
+<% if @publicationpage  %> 
+  <p><%= @publicationpage.body.html_safe %></p>
+  <% if signed_in? && current_user.admin? %> 
+    <%= link_to "Edit", edit_publicationpage_path(@publicationpage) , class: "btn" %>
+    <%= link_to "Delete", @publicationpage, method: :delete, data: { confirm: "You sure?" } ,class: "btn-clear" %>
+  <% end %>
+<% end %>
+</div> 
 
 <% if signed_in? && current_user.admin? %>
   <div class="full-size-form">
-    <%= link_to "New", new_publicationpage_path , class: "btn btn-large btn-primary" if @publicationpages.count < 1 %>
+    <%= link_to "New", new_publicationpage_path , class: "btn btn-large btn-primary" %>
   </div>
-<% end %>
-
-<% @publicationpages.each do |publicationpage| %>
-  <% if I18n.locale.to_s == publicationpage.language  %>
-    <p><%= publicationpage.body.html_safe %></p>
-    <% if signed_in? && current_user.admin? %> 
-      <%= link_to "Edit", edit_publicationpage_path(publicationpage) , class: "btn" %>
-      <%= link_to "Delete", publicationpage, method: :delete, data: { confirm: "You sure?" } ,class: "btn-clear" %>
-    <% end %>
-  <% end %>
 <% end %>

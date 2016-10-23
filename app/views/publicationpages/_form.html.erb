@@ -7,9 +7,22 @@
 <% end %>
 <%= form_for @publicationpage do |f| %>
   <div class="form-group full-size-form">
+    <%= f.label :cat, class: "control-label hidden"  %>
+    <%= f.text_field :cat ,  class: "hidden", :value => params[:cat] if action_name == "new" %>
+    <%= f.text_field :cat ,  class: "hidden" if action_name == "edit" %>
+  </div>
+  <div class="form-group full-size-form">
     <%= f.label :language, class: "control-label hidden"  %>
     <%= f.text_field :language ,  class: "form-control full-size hidden" , :value => I18n.locale.to_s %>
   </div>
+
+  <% if (!@publicationpage.cat && action_name == "edit") || (!params[:cat] && action_name == "new") %>
+    <div class="form-group full-size-form">
+      <%= f.label :title, class: "control-label hidden"  %>
+      <%= f.text_field :title ,  class: "form-control full-size", placeholder: "Title" %>
+    </div>
+  <% end %>
+
   <div class="form-group full-size-form">
     <%= f.label :body , class: "control-label hidden"  %>
 

@@ -1,2 +1,2 @@
-<h3>New Publication Page</h3>
+<h3>New Publication Page <%= "(" + params[:cat] + ")" if params[:cat] %></h3>
 <%= render "form" %>
