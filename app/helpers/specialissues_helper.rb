@@ -1,0 +1,2 @@
+module SpecialissuesHelper
+end

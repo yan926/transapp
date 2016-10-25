@@ -1,0 +1,30 @@
+<%= render "navtab" %>
+
+<br>
+<br>
+
+<ul class="ccstable">
+<% @specialissues.each do |specialissue| %>
+  <% if I18n.locale.to_s == specialissue.language  %>
+    <li <% if @specialissue.id == specialissue.id  %>class='active'<% end %>>
+      <%= link_to specialissue.title,  { :no => specialissue.id } %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+<div class="ccscontent">
+<% if @specialissue  %> 
+  <p><%= @specialissue.body.html_safe %></p>
+  <% if signed_in? && current_user.admin? %> 
+    <%= link_to "Edit", edit_specialissue_path(@specialissue) , class: "btn" %>
+    <%= link_to "Delete", @specialissue, method: :delete, data: { confirm: "You sure?" } ,class: "btn-clear" %>
+  <% end %>
+<% end %>
+</div> 
+
+<% if signed_in? && current_user.admin? %>
+  <div class="full-size-form">
+    <%= link_to "New", new_specialissue_path , class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>

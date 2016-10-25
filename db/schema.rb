@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022181131) do
+ActiveRecord::Schema.define(version: 20161025134959) do
 
   create_table "aboutpages", force: true do |t|
     t.string   "title"
@@ -72,6 +72,14 @@ ActiveRecord::Schema.define(version: 20161022181131) do
   create_table "scopepages", force: true do |t|
     t.text     "body"
     t.string   "language"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "specialissues", force: true do |t|
+    t.text     "body"
+    t.string   "language"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
