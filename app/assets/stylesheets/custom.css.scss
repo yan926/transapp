@@ -410,21 +410,19 @@ div.pagination{
   margin: 0;
   margin-bottom: 30px;
   padding: 0;
+  li{
+    display: inline-block;
+    padding: 0 10px 10px 0;
+    width: 30%;
+    vertical-align: top;
+  }
+  a{
+    padding: 8px;
+    border: 1px solid;
+    display: block;
+    font-size: 13px;
+  }
+  .active a{
+    background: #f1e9e9;
+  }
 }
-.ccstable li{
-  display: inline-block;
-  padding: 0 10px 10px 0;
-  width: 30%;
-}
-.ccstable a{
-  padding: 8px;
-  border: 1px solid;
-  display: block;
-  font-size: 13px;
-}
-.ccstable .active a{
-  background: #f1e9e9;
-}
-
-
-
