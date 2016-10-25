@@ -43,7 +43,9 @@ class SpecialissuesController < ApplicationController
   # PATCH/PUT /specialissues/1
   # PATCH/PUT /specialissues/1.json
   def update
-    if @specialissue.update(specialissue_params)
+    @specialissue = Specialissue.find(params[:id])
+    
+    if @specialissue.update_attributes(specialissue_params)
       redirect_to specialissues_path, notice: 'Specialissue was successfully updated.'
     else
       render action: 'edit'
